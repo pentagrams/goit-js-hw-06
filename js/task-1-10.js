@@ -50,8 +50,15 @@ console.log(getUsersWithAge(users, 30, 40));
 
 
 //TASK 7
-const calculateTotalBalance = users => {
-  // твой код
-};
+const calculateTotalBalance = users => users.reduce((accum, user) => {return accum + user.balance },0)
 
 console.log(calculateTotalBalance(users)); // 20916
+
+
+//TASK 8
+const getUsersWithFriend = (users, friendName) => {
+  if
+};
+
+console.log(getUsersWithFriend(users, 'Briana Decker')); // [ 'Sharlene Bush', 'Sheree Anthony' ]
+console.log(getUsersWithFriend(users, 'Goldie Gentry')); // [ 'Elma Head', 'Sheree Anthony' ]
