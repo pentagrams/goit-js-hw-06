@@ -16,7 +16,8 @@ console.log(getUsersWithEyeColor(users, 'blue')); // [объект Moore Hensley
 
 
 //TASK 3
-const getUsersWithGender = (users, gender) => users.filter(user => user.gender === gender);
+const getUsersWithGender = (users, gender) => users.filter(user => user.gender === gender)
+                                                      .map(user => user.name)
   
 console.log(getUsersWithGender(users, 'male')); // [ 'Moore Hensley', 'Ross Vazquez', 'Carey Barr', 'Blackburn Dotson' ]
 
@@ -59,9 +60,12 @@ console.log(calculateTotalBalance(users)); // 20916
 
 
 //TASK 8
-const getUsersWithFriend = (users, friendName) => 
-      users.reduce((accum, user) =>
-            user.friends.includes(friendName) ? [...accum, user.name] : accum, []);
+// const getUsersWithFriend = (users, friendName) => 
+//       users.reduce((accum, user) =>
+//             user.friends.includes(friendName) ? [...accum, user.name] : accum, []);
+
+const getUsersWithFriend = (users, friendName) => users.filter(user => user.friends.includes(friendName))
+                                                      .map(user => user.name)
 
 console.log(getUsersWithFriend(users, 'Briana Decker')); // [ 'Sharlene Bush', 'Sheree Anthony' ]
 console.log(getUsersWithFriend(users, 'Goldie Gentry')); // [ 'Elma Head', 'Sheree Anthony' ]
